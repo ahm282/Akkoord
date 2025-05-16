@@ -213,7 +213,7 @@
 											"top": 530,
 											"width": 287,
 											"height": 13,
-											"text": "-currentVersion",
+											"text": "-currentVersion: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -267,7 +267,7 @@
 											"top": 575,
 											"width": 287,
 											"height": 13,
-											"text": "#owner: Document",
+											"text": "#owner: AppUser",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1625,7 +1625,7 @@
 											"top": 831,
 											"width": 287,
 											"height": 13,
-											"text": "User"
+											"text": "AppUser"
 										},
 										{
 											"_type": "LabelView",
@@ -3269,7 +3269,7 @@
 											"top": 906,
 											"width": 287,
 											"height": 13,
-											"text": "#author: User",
+											"text": "#author: AppUser",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3855,7 +3855,7 @@
 											"top": 145,
 											"width": 287,
 											"height": 13,
-											"text": "#assignedUser: User",
+											"text": "#assignedUser: AppUser",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3873,7 +3873,7 @@
 											"top": 160,
 											"width": 287,
 											"height": 13,
-											"text": "#requiredDepartment: Department",
+											"text": "#assignedDepartment: Department",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3891,7 +3891,7 @@
 											"top": 175,
 											"width": 287,
 											"height": 13,
-											"text": "#reviewer: User",
+											"text": "#createdBy: AppUser",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4603,7 +4603,7 @@
 										"$ref": "AAAAAAGWy9WBAirdiE0="
 									},
 									"edgePosition": 1,
-									"text": "reviewed by"
+									"text": "created by"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -5984,6 +5984,24 @@
 											"height": 13,
 											"text": "REJECTED",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLEnumerationLiteralView",
+											"_id": "AAAAAAGW2gmCz3tfTUw=",
+											"_parent": {
+												"$ref": "AAAAAAGWy+lFAd2Q6fU="
+											},
+											"model": {
+												"$ref": "AAAAAAGW2gmCxns7Ib4="
+											},
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 1277,
+											"top": 270,
+											"width": 191,
+											"height": 13,
+											"text": "DELETED",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
@@ -5991,7 +6009,7 @@
 									"left": 1272,
 									"top": 190,
 									"width": 201,
-									"height": 83
+									"height": 98
 								}
 							],
 							"font": "Arial;13;0",
@@ -6000,7 +6018,7 @@
 							"left": 1272,
 							"top": 152,
 							"width": 200,
-							"height": 121,
+							"height": 136,
 							"nameCompartment": {
 								"$ref": "AAAAAAGWy+lFAd2HLLk="
 							},
@@ -6051,7 +6069,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 293,
+											"top": 309,
 											"width": 191,
 											"height": 13,
 											"text": "«enumeration»"
@@ -6065,7 +6083,7 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 308,
+											"top": 324,
 											"width": 191,
 											"height": 13,
 											"text": "ApprovalStatus"
@@ -6080,7 +6098,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 80,
-											"top": -176,
+											"top": -144,
 											"width": 80.90087890625,
 											"height": 13,
 											"text": "(from Entities)"
@@ -6095,7 +6113,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 80,
-											"top": -176,
+											"top": -144,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
@@ -6103,7 +6121,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1272,
-									"top": 288,
+									"top": 304,
 									"width": 201,
 									"height": 38,
 									"stereotypeLabel": {
@@ -6132,7 +6150,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 40,
-									"top": -88,
+									"top": -80,
 									"width": 10,
 									"height": 10
 								},
@@ -6149,7 +6167,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 40,
-									"top": -88,
+									"top": -80,
 									"width": 10,
 									"height": 10
 								},
@@ -6166,7 +6184,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 40,
-									"top": -88,
+									"top": -80,
 									"width": 10,
 									"height": 10
 								},
@@ -6183,7 +6201,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 40,
-									"top": -88,
+									"top": -80,
 									"width": 10,
 									"height": 10
 								},
@@ -6209,7 +6227,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 331,
+											"top": 347,
 											"width": 191,
 											"height": 13,
 											"text": "PENDING",
@@ -6227,7 +6245,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 346,
+											"top": 362,
 											"width": 191,
 											"height": 13,
 											"text": "APPROVED",
@@ -6245,7 +6263,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 361,
+											"top": 377,
 											"width": 191,
 											"height": 13,
 											"text": "REJECTED",
@@ -6263,7 +6281,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 376,
+											"top": 392,
 											"width": 191,
 											"height": 13,
 											"text": "CHANGES_REQUESTED",
@@ -6273,7 +6291,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1272,
-									"top": 326,
+									"top": 342,
 									"width": 201,
 									"height": 68
 								}
@@ -6282,7 +6300,7 @@
 							"parentStyle": false,
 							"containerChangeable": true,
 							"left": 1272,
-							"top": 288,
+							"top": 304,
 							"width": 200,
 							"height": 106,
 							"nameCompartment": {
@@ -6335,7 +6353,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 413,
+											"top": 429,
 											"width": 191,
 											"height": 13,
 											"text": "«enumeration»"
@@ -6349,7 +6367,7 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 428,
+											"top": 444,
 											"width": 191,
 											"height": 13,
 											"text": "AuditAction"
@@ -6364,7 +6382,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 96,
-											"top": -256,
+											"top": -224,
 											"width": 80.90087890625,
 											"height": 13,
 											"text": "(from Entities)"
@@ -6379,7 +6397,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 96,
-											"top": -256,
+											"top": -224,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
@@ -6387,7 +6405,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1272,
-									"top": 408,
+									"top": 424,
 									"width": 201,
 									"height": 38,
 									"stereotypeLabel": {
@@ -6416,7 +6434,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 48,
-									"top": -128,
+									"top": -104,
 									"width": 10,
 									"height": 10
 								},
@@ -6433,7 +6451,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 48,
-									"top": -128,
+									"top": -104,
 									"width": 10,
 									"height": 10
 								},
@@ -6450,7 +6468,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 48,
-									"top": -128,
+									"top": -104,
 									"width": 10,
 									"height": 10
 								},
@@ -6467,7 +6485,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 48,
-									"top": -128,
+									"top": -104,
 									"width": 10,
 									"height": 10
 								},
@@ -6493,7 +6511,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 451,
+											"top": 467,
 											"width": 191,
 											"height": 13,
 											"text": "CREATED",
@@ -6511,7 +6529,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 466,
+											"top": 482,
 											"width": 191,
 											"height": 13,
 											"text": "VERSION_SUBMITTED",
@@ -6529,7 +6547,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 481,
+											"top": 497,
 											"width": 191,
 											"height": 13,
 											"text": "APPROVED",
@@ -6547,7 +6565,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 496,
+											"top": 512,
 											"width": 191,
 											"height": 13,
 											"text": "REJECTED",
@@ -6565,7 +6583,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 511,
+											"top": 527,
 											"width": 191,
 											"height": 13,
 											"text": "COMMENTED",
@@ -6583,7 +6601,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1277,
-											"top": 526,
+											"top": 542,
 											"width": 191,
 											"height": 13,
 											"text": "RESUBMITTED",
@@ -6593,7 +6611,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1272,
-									"top": 446,
+									"top": 462,
 									"width": 201,
 									"height": 98
 								}
@@ -6602,7 +6620,7 @@
 							"parentStyle": false,
 							"containerChangeable": true,
 							"left": 1272,
-							"top": 408,
+							"top": 424,
 							"width": 200,
 							"height": 136,
 							"nameCompartment": {
@@ -6744,7 +6762,7 @@
 							},
 							"name": "currentVersion",
 							"visibility": "private",
-							"type": ""
+							"type": "int"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -6774,9 +6792,7 @@
 							},
 							"name": "owner",
 							"visibility": "protected",
-							"type": {
-								"$ref": "AAAAAAGWy7yLAS1bbDE="
-							}
+							"type": "AppUser"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7078,7 +7094,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "User",
+					"name": "AppUser",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -7115,7 +7131,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGWy83RtUOYxOA="
 							},
-							"name": "reviewed by",
+							"name": "created by",
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAGWy9WBAira/vE=",
@@ -7554,7 +7570,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGWy9Mbu+gFS8s="
 							},
-							"name": "requiredDepartment",
+							"name": "assignedDepartment",
 							"visibility": "protected",
 							"type": {
 								"$ref": "AAAAAAGWy9B2EmRBito="
@@ -7566,7 +7582,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGWy9Mbu+gFS8s="
 							},
-							"name": "reviewer",
+							"name": "createdBy",
 							"visibility": "protected",
 							"type": {
 								"$ref": "AAAAAAGWy83RtUOYxOA="
@@ -7673,6 +7689,14 @@
 								"$ref": "AAAAAAGWy+lFAd2EaMc="
 							},
 							"name": "REJECTED"
+						},
+						{
+							"_type": "UMLEnumerationLiteral",
+							"_id": "AAAAAAGW2gmCxns7Ib4=",
+							"_parent": {
+								"$ref": "AAAAAAGWy+lFAd2EaMc="
+							},
+							"name": "DELETED"
 						}
 					]
 				},
@@ -15484,7 +15508,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz10sNDXQDq8="
 									},
-									"name": "int status"
+									"name": "int status",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -15492,7 +15517,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz10sNDXQDq8="
 									},
-									"name": "String error"
+									"name": "String error",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -15500,7 +15526,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz10sNDXQDq8="
 									},
-									"name": "String message"
+									"name": "String message",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -15508,7 +15535,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz10sNDXQDq8="
 									},
-									"name": "String path"
+									"name": "String path",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -15516,7 +15544,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz10sNDXQDq8="
 									},
-									"name": "String debugInfo"
+									"name": "String debugInfo",
+									"type": ""
 								}
 							]
 						},
@@ -15658,7 +15687,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz1isZDV3FpI="
 									},
-									"name": "EntityNotFoundException ex"
+									"name": "EntityNotFoundException ex",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -15666,7 +15696,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz1isZDV3FpI="
 									},
-									"name": "HttpServletRequest request"
+									"name": "HttpServletRequest request",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -17420,7 +17451,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz4PdOjryCsc="
 									},
-									"name": "CreateDocumentDTO dto"
+									"name": "CreateDocumentDTO dto",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -17428,7 +17460,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz4PdOjryCsc="
 									},
-									"name": "UUID userId"
+									"name": "UUID userId",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -17455,7 +17488,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz4QmMzr9cN8="
 									},
-									"name": "UUID userId"
+									"name": "UUID userId",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -17482,7 +17516,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz4RtdzsGSIo="
 									},
-									"name": "UUID id"
+									"name": "UUID id",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -17875,7 +17910,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz32R8DqZVm4="
 									},
-									"name": "UUID stepId"
+									"name": "UUID stepId",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -17927,7 +17963,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz4FfwzrBkPI="
 									},
-									"name": "IUserService userService"
+									"name": "IUserService userService",
+									"type": ""
 								}
 							]
 						},
@@ -17964,7 +18001,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz3pK3DpfLj0="
 									},
-									"name": "UUID id"
+									"name": "UUID id",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -18055,7 +18093,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz3c1OjoheGQ="
 									},
-									"name": "IAuthService authService"
+									"name": "IAuthService authService",
+									"type": ""
 								}
 							]
 						},
@@ -18073,7 +18112,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz3gDKjot85c="
 									},
-									"name": "LoginDTO dto"
+									"name": "LoginDTO dto",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -18102,7 +18142,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGWz3gY3zozJHc="
 									},
-									"name": "RegisterDTO dto"
+									"name": "RegisterDTO dto",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
