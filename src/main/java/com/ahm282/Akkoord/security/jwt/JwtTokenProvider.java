@@ -4,18 +4,17 @@ import com.ahm282.Akkoord.model.security.UserPrincipal;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
-import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -26,6 +25,9 @@ public class JwtTokenProvider {
 
     private final SecretKey key;
     private final int jwtExpirationMs;
+
+    @Autowired
+    private TokenBlacklist tokenBlacklist;
 
     public JwtTokenProvider(
             @Value("${app.jwt.secret}") String jwtSecret,
@@ -78,6 +80,10 @@ public class JwtTokenProvider {
 
     public boolean validateToken(String authToken) {
         try {
+            if (tokenBlacklist.isBlacklisted(authToken)) {
+                return false;
+            }
+
             Jwts.parser()
                     .verifyWith(key)
                     .build()
@@ -87,5 +93,13 @@ public class JwtTokenProvider {
             logger.error("JWT validation error: {}", e.getMessage());
             return false;
         }
+    }
+
+    public Claims extractAllClaims(String authToken) {
+        return Jwts.parser()
+            .verifyWith(key)
+            .build()
+            .parseSignedClaims(authToken)
+            .getPayload();
     }
 }

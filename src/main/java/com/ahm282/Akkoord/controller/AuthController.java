@@ -13,8 +13,13 @@ import com.ahm282.Akkoord.model.security.UserPrincipal;
 import com.ahm282.Akkoord.repository.AppUserRepository;
 import com.ahm282.Akkoord.repository.DepartmentRepository;
 import com.ahm282.Akkoord.security.jwt.JwtTokenProvider;
+import com.ahm282.Akkoord.security.jwt.TokenBlacklist;
+
+import io.jsonwebtoken.Claims;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -36,6 +41,12 @@ public class AuthController {
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider tokenProvider;
     private final DepartmentRepository departmentRepository;
+
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
+
+    @Autowired
+    private TokenBlacklist tokenBlacklist;
 
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginDTO loginRequest) {
@@ -100,5 +111,20 @@ public class AuthController {
                 ));
     }
 
-
+    @GetMapping("/logout")
+    public ResponseEntity<?> logoutUser(@RequestHeader(value = "Authorization", required = false) String tokenHeader) {
+        if (tokenHeader != null && tokenHeader.startsWith("Bearer ")) {
+            String token = tokenHeader.substring(7);
+            try {
+                Claims claims = jwtTokenProvider.extractAllClaims(token);
+                Long expirationTime = claims.getExpiration().getTime();
+                
+                tokenBlacklist.addToBlacklist(token, expirationTime);
+                return ResponseEntity.ok("Logged out successfully");
+            } catch (Exception e) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid token");
+            }
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid authorization header");
+    }
 }
